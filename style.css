@@ -38,6 +38,10 @@ main{
     margin: 20px 0;
 }
 
+.adv-number{
+    letter-spacing: 5px;
+}
+
 .card .divider{
     margin: 20px 0 65px 0;
     width: 100%;
