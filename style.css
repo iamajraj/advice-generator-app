@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+main{
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    font-family: 'Manrope', sans-serif;
+    background-color: hsl(218, 23%, 16%);
+}
+.container{
+    margin: 0 auto;
+}
+.card{
+    max-width: 450px;
+    background-color: hsl(217, 19%, 24%);
+    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.1);
+    border-radius: 20px;
+    padding: 25px 35px 0 35px;
+    position: relative;
+    margin: 1em 1em;
+}
+
+.card p{
+    font-size: 14px;
+    margin-top: 20px;
+    color:  hsl(150, 100%, 66%);
+}
+
+.card .advice-txt{
+    width: 100%;
+    font-size: 28px;
+    color:  hsl(193, 38%, 86%);
+    margin: 20px 0;
+}
+
+.card .divider{
+    margin: 20px 0 65px 0;
+    width: 100%;
+}
+
+.dice{
+    position: absolute;
+    bottom: -25px;
+    background-color: hsl(150, 100%, 66%);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    cursor: pointer;
+}
+
+.dice:hover{
+    box-shadow: 0 0 15px 10px hsla(150, 100%, 66%, 0.3);
+}
+
+@media (max-width: 728px){
+    .divider{
+        content: url('./images/pattern-divider-mobile.svg');
+    }
+}

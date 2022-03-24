@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png"/>
+    <title>Frontend Mentor | Advice generator app</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <div class="card">
+          <p>ADVICE #<span class="adv-number">112</span></p>
+          <h1 class="advice-txt">
+            "<span class="advice"
+              >It is easy to sit up and take notice, what's difficult is getting
+              up and taking action.</span
+            >"
+          </h1>
+          <img
+            class="divider"
+            src="./images/pattern-divider-desktop.svg"
+            alt="divider"
+          />
+          <div class="dice">
+            <img src="./images/icon-dice.svg" alt="dice" />
+          </div>
+        </div>
+      </div>
+    </main>
+    <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io/challenges/advice-generator-app-QdUG-13db/hub/advice-generator-app-Hk6ErFKz9" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">m.raj</a>.
+    </div> -->
+    <script>
+      const advNumber = document.querySelector(".adv-number"),
+        adviceTxt = document.querySelector(".advice"),
+        dice = document.querySelector(".dice");
+        
+      dice.addEventListener("click", () => {
+        fetchData();
+      });
+
+      function fetchData() {
+        const fetchdata = fetch("https://api.adviceslip.com/advice")
+          .then((response) => {
+            return response.json();
+          })
+          .then((data) => {
+            advNumber.textContent = data.slip.id;
+            adviceTxt.textContent = data.slip.advice;
+          });
+      }
+    </script>
+  </body>
+</html>
